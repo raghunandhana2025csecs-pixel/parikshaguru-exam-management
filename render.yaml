@@ -1,0 +1,46 @@
+# Render Blueprint Configuration (render.yaml)
+# ParikshaGuru - Spring Boot Backend & Express Frontend
+# Database: External Aiven MySQL (configured via environment variables)
+
+services:
+  # Spring Boot REST API Backend
+  - type: web
+    name: parikshaguru-backend
+    env: java
+    region: oregon # Or your preferred Render region
+    plan: free # or starter/standard
+    rootDir: parikshaguru-backend/parikshaguru-backend
+    buildCommand: mvn clean package -DskipTests
+    startCommand: java -jar target/parikshaguru-backend-1.0.0.jar --spring.profiles.active=aiven
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: aiven
+      - key: DB_URL
+        sync: false # Set in Render dashboard
+      - key: DB_USER
+        sync: false # Set in Render dashboard
+      - key: DB_PASSWORD
+        sync: false # Set in Render dashboard
+      - key: JWT_SECRET
+        generateValue: true
+      - key: SEED_ENABLED
+        value: "false"
+      - key: SEED_DEMO_DATA
+        value: "false"
+      - key: CORS_ORIGINS
+        sync: false # Set to frontend Render URL after frontend deployment
+
+  # Express Static Frontend Portal
+  - type: web
+    name: parikshaguru-frontend
+    env: node
+    region: oregon
+    plan: free
+    rootDir: ParikshaGuru Frontend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: "3000"
+      - key: API_BASE_URL
+        sync: false # Set to backend Render URL (e.g. https://parikshaguru-backend.onrender.com)

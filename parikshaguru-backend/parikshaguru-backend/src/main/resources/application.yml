@@ -1,0 +1,24 @@
+# Main configuration file - use profiles for specific environments
+# Active profile can be set via: spring.profiles.active=aiven (defaults to local)
+
+server:
+  port: ${SERVER_PORT:8080}
+  servlet:
+    context-path: ${SERVER_CONTEXT_PATH:/}
+
+spring:
+  application:
+    name: parikshaguru-backend
+  config:
+    import: optional:file:.env[.properties]
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:local}
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    default-property-inclusion: non_null
+
+logging:
+  level:
+    root: ${LOG_LEVEL:INFO}
+    com.parikshaguru: ${LOG_LEVEL:INFO}

@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+  <script src="/config.js"></script><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script src="../sign_in_registration/client-integration.js"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-surface-variant":"#444653","primary-container":"#1e40af","surface-container":"#eaedff","surface-tint":"#3755c3","surface-dim":"#d2d9f4","tertiary-fixed":"#e2dfff","primary-fixed-dim":"#b8c4ff","surface-container-low":"#f2f3ff","on-primary-fixed":"#001453","inverse-on-surface":"#eef0ff","on-primary-container":"#a8b8ff","on-tertiary":"#ffffff","on-secondary-fixed-variant":"#3f465c","on-error-container":"#93000a","on-error":"#ffffff","primary-fixed":"#dde1ff","inverse-surface":"#283044","on-secondary-container":"#5c647a","inverse-primary":"#b8c4ff","surface-bright":"#faf8ff","secondary-container":"#dae2fd","on-secondary":"#ffffff","on-tertiary-container":"#b6b4ff","tertiary-container":"#382ad0","surface-container-lowest":"#ffffff","primary":"#00288e","surface-container-highest":"#dae2fd","secondary":"#565e74","surface-variant":"#dae2fd","secondary-fixed-dim":"#bec6e0","surface":"#faf8ff","on-surface":"#131b2e","error-container":"#ffdad6","on-tertiary-fixed":"#0f0069","outline-variant":"#c4c5d5","on-background":"#131b2e","outline":"#757684","on-tertiary-fixed-variant":"#3323cc","on-primary-fixed-variant":"#173bab","surface-container-high":"#e2e7ff","tertiary-fixed-dim":"#c3c0ff","background":"#faf8ff","on-secondary-fixed":"#131b2e","secondary-fixed":"#dae2fd","tertiary":"#2000b1","error":"#ba1a1a","on-primary":"#ffffff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-xl":"2rem","margin-mobile":"1rem",gutter:"1.5rem","space-sm":"0.5rem","gutter-mobile":"1rem","space-xs":"0.25rem","space-md":"1rem",margin:"2rem","space-lg":"1.5rem"},fontFamily:{"body-lg":["Inter"],"headline-sm":["Plus Jakarta Sans"],"label-lg":["Inter"],"display-lg":["Plus Jakarta Sans"],"body-md":["Inter"],"headline-xl":["Plus Jakarta Sans"],"label-sm":["Inter"],"headline-lg":["Plus Jakarta Sans"],"label-md":["Inter"],"headline-xl-mobile":["Plus Jakarta Sans"],"body-sm":["Inter"],"headline-md":["Plus Jakarta Sans"]},fontSize:{"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-sm":["18px",{lineHeight:"24px",fontWeight:"600"}],"label-lg":["14px",{lineHeight:"20px",letterSpacing:"0.01em",fontWeight:"600"}],"display-lg":["48px",{lineHeight:"56px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"headline-xl":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"600"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"600"}],"headline-xl-mobile":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"700"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"headline-md":["22px",{lineHeight:"28px",fontWeight:"600"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-40 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 flex items-center gap-space-sm px-space-lg bg-surface-container-lowest"><img alt="ParikshaGuru Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrpWrnZGOifc2LpIBoJKow4mZ1k3Wbrq0HTBqZPyRfNPN8qvKjgScHdOnkTU1qxKxrDw6qDxqluFzyVza55TES4zz_Nq9oinkTpxJmdJDYNY67cxQ5yluVLPFdRePjb9KW7VkZj1ZFAvCV_UyYICKSbgFTNQ5QhLqHjD2U2AW9lBfNQ7tKzoSoVBcNrWXqINrZTUjx1yylLDnLoS7MkM1TNEW7Su3vYAPNM64TZCY"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">ParikshaGuru</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Exam Portal</span></div></div><div class="flex-1 overflow-y-auto px-space-md py-space-sm"><div class="px-space-sm py-space-xs font-label-sm text-label-sm text-secondary uppercase tracking-wider">Student Space</div><nav class="flex flex-col gap-space-xs mb-space-md" data-active-classes="bg-primary-container text-on-primary font-label-lg"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="student-dashboard" href="#"><span class="material-symbols-outlined text-[20px]">space_dashboard</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="available-exams" href="#"><span class="material-symbols-outlined text-[20px]">event_available</span><span>Available Exams</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="active-assessments" href="#"><span class="material-symbols-outlined text-[20px]">timer</span><span>Active Assessments</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="my-results" href="#"><span class="material-symbols-outlined text-[20px]">workspace_premium</span><span>My Results</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="student-profile" href="#"><span class="material-symbols-outlined text-[20px]">badge</span><span>My Profile</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="support-desk" href="#"><span class="material-symbols-outlined text-[20px]">contact_support</span><span>Support</span></a></nav><div class="px-space-sm py-space-xs font-label-sm text-label-sm text-secondary uppercase tracking-wider">Faculty &amp; Admin</div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-lg"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="faculty-overview" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span><span>Overview</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="subject-management" href="#"><span class="material-symbols-outlined text-[20px]">menu_book</span><span>Subject Management</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="exam-builder" href="#"><span class="material-symbols-outlined text-[20px]">edit_document</span><span>Exam Builder</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg transition-colors bg-primary-container text-on-primary font-label-lg" data-path="grading-review" href="#"><span class="material-symbols-outlined text-[20px]">rule</span><span>Submissions &amp; Grading</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="results-release" href="#"><span class="material-symbols-outlined text-[20px]">published_with_changes</span><span>Results Release</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="faculty-profile" href="#"><span class="material-symbols-outlined text-[20px]">account_box</span><span>Faculty Profile</span></a></nav></div><div class="p-space-md bg-surface-container-low"><div class="flex items-center justify-between p-space-sm bg-surface-container-lowest rounded-lg"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-primary">verified</span><span class="font-label-sm text-label-sm text-on-surface font-semibold">National Council</span></div><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant">ISO 9001</span></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-30 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-secondary-container text-on-secondary-container"><span class="material-symbols-outlined text-[16px] text-primary">school</span><span class="font-label-sm text-label-sm">Role: Student (ENR-2024-902)</span><button class="hover:opacity-80 transition-opacity" title="Switch portal role" type="button"><span class="material-symbols-outlined text-[14px]">swap_horiz</span></button></div><div class="hidden md:flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container text-on-surface"><span class="material-symbols-outlined text-[16px] text-primary">calendar_month</span><span class="font-label-sm text-label-sm font-semibold">AY 2024-25 | Fall Mid-Term Cycle</span></div></div><div class="flex items-center gap-space-md"><button class="relative p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" title="Examination Notices" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 w-2.5 h-2.5 bg-error rounded-full ring-2 ring-surface"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="hidden sm:flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Aarav Sharma</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">B.Tech CSE - Yr 3</span></div><div class="relative flex items-center gap-space-xs cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnPwy-xKhexw_Jg6VmwrQYeM66vK9TqKg4nSeHmrVahLkbcO6G_z2y5QdY3RAZnfbZ0UtgoqZfAqrGGDg9l4D-XlEC5zajP66q6_ld1RJQcAkdA34JrYJKpDKeiko4IdYA9IiPuXbRU7JTqAF2j6YCKq_zp8Jh6BW0PuV-pVyM17bN_qLz1UVhsbtBZ4p6nIkaOS7fMJS2N5T3Ii9ON536jwwljHLlW2EdQCnXqjU"/><span class="material-symbols-outlined text-[18px] text-on-surface-variant">expand_more</span></div></div></div></div></header><main class="w-full flex-1 pt-16 bg-surface px-space-lg pb-space-lg"><div class="flex flex-col w-full">
+<!-- Faculty Workspace Header Banner -->
+<div class="relative bg-surface-container-lowest p-space-lg rounded-xl shadow-sm mb-space-lg overflow-hidden">
+<div class="absolute -right-16 -top-20 w-80 h-80 rounded-full bg-gradient-to-br from-secondary-container/40 via-surface-container-high/20 to-transparent pointer-events-none"></div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md relative z-10">
+<div class="flex items-start gap-space-md">
+<div class="relative w-16 h-16 rounded-xl overflow-hidden shadow-sm shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Distinguished university senior professor in academia with glasses and deep navy formal blazer seated at modern academic workstation with digital lecture tablet and textbooks in soft collegiate natural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD60QgMWkn0V9ZnQrSmycaAShoQFvm4FEbbdBl5NkS6TAKabNjKwjfPPuBtwmX4IatKa93RnwLqrQyzHinnMSlNhvLP0HaqytTerruJmliVLswuGaf8Z5-4OKjRJUWVsI5gXbQrWVy5-iHNuze6IzTJo6owpk9WHQybXg2jyVsQKmwmJ_qnsgZ1VxiCyNAJbOt3tEMzUW1Il7mZtNdUpV3TuD7udCRHw7JC2v7Wj2w"/>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold bg-surface-container px-space-xs py-0.5 rounded">Admin &amp; Faculty Workspace</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">verified</span> ISO-9001 Council Certified
+            </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-0.5">Prof. Dr. S. K. Nair</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Department of Computer Science &amp; Engineering • Chair of Exam Moderation &amp; Grading Council (Fall 2024 Cycle)
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap self-start lg:self-center">
+<button class="flex items-center gap-space-xs px-space-md py-space-sm bg-primary text-on-primary font-label-md text-label-md rounded-lg shadow-sm hover:opacity-95 transition-all" onclick="openExamModal()" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Create New Exam</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-sm bg-surface-container text-on-surface font-label-md text-label-md rounded-lg hover:bg-surface-container-high transition-colors" onclick="exportModerationSheet()" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">download</span>
+<span>Export Moderation Sheet</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Key Metrics Density Strip -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-lg">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Active Subjects</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-display-lg text-display-lg text-on-surface leading-none font-bold">4</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Enrolled: 420 Stud.</span>
+</div>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[26px]">menu_book</span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Published Exams</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-display-lg text-display-lg text-on-surface leading-none font-bold">6</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Live in Portal</span>
+</div>
+</div>
+<div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[26px]">task_alt</span>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Draft Exams (Builder)</span>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-display-lg text-display-lg text-on-surface leading-none font-bold">2</span>
+<span class="font-label-sm text-label-sm text-secondary">In Authoring</span>
+</div>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[26px]">edit_note</span>
+</div>
+</div>
+<!-- Metric 4 (High Attention) -->
+<div class="bg-primary-container text-on-primary p-space-md rounded-xl shadow-sm flex items-center justify-between relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 w-20 h-20 bg-primary/20 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-on-primary-container uppercase tracking-wider">Pending Review</span>
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+</div>
+<div class="flex items-baseline gap-space-xs mt-1">
+<span class="font-display-lg text-display-lg leading-none font-bold">48</span>
+<span class="font-label-sm text-label-sm text-on-primary-container">Requires Sign-off</span>
+</div>
+</div>
+<div class="w-12 h-12 rounded-xl bg-primary/40 flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[26px]">gavel</span>
+</div>
+</div>
+</div>
+<!-- Main Navigation Tabs -->
+<div class="flex items-center justify-between bg-surface-container-lowest p-space-xs rounded-xl shadow-sm mb-space-md">
+<div class="flex items-center gap-space-xs">
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg font-label-md text-label-md transition-all bg-primary-container text-on-primary shadow-sm" id="tab-btn-1" onclick="switchTab(1)" type="button">
+<span class="material-symbols-outlined text-[18px]">folder_special</span>
+<span>Exam &amp; Subject Management</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg font-label-md text-label-md transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface" id="tab-btn-2" onclick="switchTab(2)" type="button">
+<span class="material-symbols-outlined text-[18px]">fact_check</span>
+<span>Results Review &amp; Release Queue</span>
+<span class="px-space-xs py-0.5 rounded-full text-label-sm font-label-sm bg-error-container text-on-error-container ml-1" id="queue-badge-count">48</span>
+</button>
+</div>
+<div class="hidden md:flex items-center gap-space-xs text-on-surface-variant px-space-sm font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+<span>Live Server Sync: Auto-locked</span>
+</div>
+</div>
+<!-- TAB 1 CONTENT: Exam & Subject Management -->
+<div class="flex flex-col gap-space-lg" id="tab-content-1">
+<!-- Active Subjects Cluster -->
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Curriculum Responsibilities</h2>
+<span class="font-label-sm text-label-sm text-secondary">3 Undergraduate • 1 Postgraduate</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Subject Card 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold bg-surface-container px-space-xs py-0.5 rounded">CS602</span>
+<span class="font-label-sm text-label-sm text-secondary">Credits: 4.0</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Database Management Systems</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">B.Tech CSE • Semester VI • 132 Students</p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary">Active Exam</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Mid-Term Cycle 2</span>
+</div>
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-surface-container text-primary font-semibold">3 Assessments</span>
+</div>
+</div>
+<!-- Subject Card 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold bg-surface-container px-space-xs py-0.5 rounded">CS605</span>
+<span class="font-label-sm text-label-sm text-secondary">Credits: 4.0</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Design &amp; Analysis of Algorithms</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">B.Tech CSE • Semester VI • 144 Students</p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary">Active Exam</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Dynamic Prog Lab Exam</span>
+</div>
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-surface-container text-primary font-semibold">4 Assessments</span>
+</div>
+</div>
+<!-- Subject Card 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold bg-surface-container px-space-xs py-0.5 rounded">CS701</span>
+<span class="font-label-sm text-label-sm text-secondary">Credits: 3.5</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Distributed Systems &amp; Cloud</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">B.Tech CSE • Semester VII • 96 Students</p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary">Active Exam</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Consensus Protocols Quiz</span>
+</div>
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-surface-container text-primary font-semibold">1 Assessment</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Exam Inventory Table -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Course Examination Registry</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Complete inventory of active, authoring, and evaluated papers</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<input class="px-space-md py-space-xs text-body-sm font-body-sm rounded-lg bg-surface-container-low text-on-surface focus:outline-none focus:bg-surface-container" placeholder="Search exam title or code..." type="text"/>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-secondary font-label-sm text-label-sm uppercase tracking-wider">
+<th class="p-space-md rounded-l-lg">Exam Code</th>
+<th class="p-space-md">Title &amp; Module</th>
+<th class="p-space-md">Subject</th>
+<th class="p-space-md">Total Marks</th>
+<th class="p-space-md">Status</th>
+<th class="p-space-md">Submissions</th>
+<th class="p-space-md text-right rounded-r-lg">Direct Action</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm divide-y divide-surface-container">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-space-md font-semibold text-primary">EX-CS602-M2</td>
+<td class="p-space-md">
+<div class="font-headline-sm text-headline-sm text-on-surface text-[15px]">DBMS Mid-Term Comprehensive</div>
+<div class="text-on-surface-variant text-[12px]">Theory (Section A) + SQL Lab Practical (Section B)</div>
+</td>
+<td class="p-space-md"><span class="bg-surface-container px-space-xs py-0.5 rounded font-label-sm text-label-sm font-semibold">CS602</span></td>
+<td class="p-space-md font-semibold text-on-surface">50 Marks</td>
+<td class="p-space-md">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-[#FFFBEB] text-[#B45309] font-semibold">Grading Review</span>
+</td>
+<td class="p-space-md text-on-surface font-semibold">128 / 132</td>
+<td class="p-space-md text-right">
+<button class="px-space-sm py-space-xs rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:opacity-90" onclick="switchTab(2)" type="button">
+                  Review Submissions
+                </button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-space-md font-semibold text-primary">EX-CS605-A1</td>
+<td class="p-space-md">
+<div class="font-headline-sm text-headline-sm text-on-surface text-[15px]">Divide &amp; Conquer Assessment</div>
+<div class="text-on-surface-variant text-[12px]">Master Theorem, Quicksort &amp; Graph Traversals</div>
+</td>
+<td class="p-space-md"><span class="bg-surface-container px-space-xs py-0.5 rounded font-label-sm text-label-sm font-semibold">CS605</span></td>
+<td class="p-space-md font-semibold text-on-surface">30 Marks</td>
+<td class="p-space-md">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-[#EFF6FF] text-[#1D4ED8] font-semibold">Published</span>
+</td>
+<td class="p-space-md text-on-surface font-semibold">144 / 144</td>
+<td class="p-space-md text-right">
+<button class="px-space-sm py-space-xs rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high" type="button">
+                  View Results
+                </button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-space-md font-semibold text-primary">EX-CS701-Q1</td>
+<td class="p-space-md">
+<div class="font-headline-sm text-headline-sm text-on-surface text-[15px]">Raft &amp; Paxos Consensus Quiz</div>
+<div class="text-on-surface-variant text-[12px]">Objective Matrix with Time-Bounded Proctoring</div>
+</td>
+<td class="p-space-md"><span class="bg-surface-container px-space-xs py-0.5 rounded font-label-sm text-label-sm font-semibold">CS701</span></td>
+<td class="p-space-md font-semibold text-on-surface">20 Marks</td>
+<td class="p-space-md">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-[#EFF6FF] text-[#1D4ED8] font-semibold">Published</span>
+</td>
+<td class="p-space-md text-on-surface font-semibold">94 / 96</td>
+<td class="p-space-md text-right">
+<button class="px-space-sm py-space-xs rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high" type="button">
+                  View Submissions
+                </button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-space-md font-semibold text-primary">EX-CS602-END</td>
+<td class="p-space-md">
+<div class="font-headline-sm text-headline-sm text-on-surface text-[15px]">DBMS End-Semester Summative Final</div>
+<div class="text-on-surface-variant text-[12px]">ACID, Normalization, Query Optimizer Benchmarks</div>
+</td>
+<td class="p-space-md"><span class="bg-surface-container px-space-xs py-0.5 rounded font-label-sm text-label-sm font-semibold">CS602</span></td>
+<td class="p-space-md font-semibold text-on-surface">100 Marks</td>
+<td class="p-space-md">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-[#F1F5F9] text-[#475569] font-semibold">Draft</span>
+</td>
+<td class="p-space-md text-on-surface-variant">0 (Not launched)</td>
+<td class="p-space-md text-right">
+<button class="px-space-sm py-space-xs rounded-lg bg-surface-container text-primary font-label-md text-label-md hover:bg-surface-container-high font-semibold" onclick="openExamModal()" type="button">
+                  Edit Questions
+                </button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-space-md font-semibold text-primary">EX-CS605-LAB</td>
+<td class="p-space-md">
+<div class="font-headline-sm text-headline-sm text-on-surface text-[15px]">Graph Theory Practical Assessment</div>
+<div class="text-on-surface-variant text-[12px]">Interactive Code Sandbox &amp; Complexity Bounds</div>
+</td>
+<td class="p-space-md"><span class="bg-surface-container px-space-xs py-0.5 rounded font-label-sm text-label-sm font-semibold">CS605</span></td>
+<td class="p-space-md font-semibold text-on-surface">40 Marks</td>
+<td class="p-space-md">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-[#F1F5F9] text-[#475569] font-semibold">Draft</span>
+</td>
+<td class="p-space-md text-on-surface-variant">0 (In Authoring)</td>
+<td class="p-space-md text-right">
+<button class="px-space-sm py-space-xs rounded-lg bg-surface-container text-primary font-label-md text-label-md hover:bg-surface-container-high font-semibold" onclick="openExamModal()" type="button">
+                  Edit Questions
+                </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- TAB 2 CONTENT: Results Review & Release Queue (Focus Area) -->
+<div class="hidden flex-col gap-space-lg" id="tab-content-2">
+<!-- Filter and Moderation Batch Action Bar -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<!-- Filtering Options -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-secondary mb-0.5">Filter by Subject</label>
+<select class="bg-surface-container-low px-space-md py-space-xs rounded-lg text-body-sm font-body-sm text-on-surface focus:outline-none" id="filter-subject">
+<option value="all">All Subjects (4)</option>
+<option selected="" value="cs602">CS602 - Database Systems (32)</option>
+<option value="cs605">CS605 - Algorithms (12)</option>
+<option value="cs701">CS701 - Distributed Systems (4)</option>
+</select>
+</div>
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-secondary mb-0.5">Academic Batch</label>
+<select class="bg-surface-container-low px-space-md py-space-xs rounded-lg text-body-sm font-body-sm text-on-surface focus:outline-none">
+<option selected="">Batch 2021-2025 (Final Year)</option>
+<option>Batch 2022-2026 (Third Year)</option>
+</select>
+</div>
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-secondary mb-0.5">Release Status</label>
+<select class="bg-surface-container-low px-space-md py-space-xs rounded-lg text-body-sm font-body-sm text-on-surface focus:outline-none">
+<option selected="">Pending Faculty Approval (48)</option>
+<option>Approved &amp; Published to Portal</option>
+<option>Flagged for Academic Inquiry</option>
+</select>
+</div>
+</div>
+<!-- Action Button Group -->
+<div class="flex items-center gap-space-xs self-start md:self-end">
+<button class="flex items-center gap-space-xs px-space-md py-space-sm bg-primary text-on-primary font-label-md text-label-md rounded-lg shadow-sm hover:opacity-95 transition-opacity" onclick="bulkApprove()" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span id="bulk-btn-text">Bulk Approve Selected (12)</span>
+</button>
+<button class="p-space-sm rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors" onclick="exportModerationSheet()" title="Download CSV Moderation Registry" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">table_chart</span>
+</button>
+</div>
+</div>
+<!-- Review Queue Table -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Candidate Submissions Queue</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Review automatic assessment diagnostics, verify honor code metrics, and release final grades</p>
+</div>
+<div class="flex items-center gap-space-xs text-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">info</span>
+<span>12 candidates selected for immediate release</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-secondary font-label-sm text-label-sm uppercase tracking-wider">
+<th class="p-space-md rounded-l-lg w-10">
+<input checked="" class="rounded text-primary focus:ring-0 cursor-pointer" onclick="toggleSelectAll(this)" type="checkbox"/>
+</th>
+<th class="p-space-md">Student Roll &amp; Name</th>
+<th class="p-space-md">Assessment Module</th>
+<th class="p-space-md">Timestamp &amp; Proctor Integrity</th>
+<th class="p-space-md">Auto Score</th>
+<th class="p-space-md">Approval State</th>
+<th class="p-space-md text-right rounded-r-lg">Sign-off Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm divide-y divide-surface-container" id="queue-table-body">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors" id="row-1">
+<td class="p-space-md">
+<input checked="" class="candidate-checkbox rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="p-space-md">
+<div class="font-headline-sm text-headline-sm text-on-surface text-[15px]">Rohan Verma</div>
+<div class="font-label-sm text-label-sm text-primary font-semibold">2024-CS-084</div>
+</td>
+<td class="p-space-md">
+<div class="font-semibold text-on-surface">CS602 Mid-Sem</div>
+<div class="text-on-surface-variant text-[12px]">DBMS Architecture &amp; Indexing</div>
+</td>
+<td class="p-space-md">
+<div class="text-on-surface">Oct 24, 11:42 AM</div>
+<div class="flex items-center gap-1 text-[11px] font-semibold text-[#047857]">
+<span class="material-symbols-outlined text-[14px]">shield</span> 100% Clean Proctor
+                </div>
+</td>
+<td class="p-space-md">
+<div class="font-headline-sm text-headline-sm text-primary text-[16px]">42 <span class="text-on-surface-variant text-[13px] font-normal">/ 50</span></div>
+<div class="text-[11px] text-on-surface-variant">84.0% • Grade A</div>
+</td>
+<td class="p-space-md">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-[#FFFBEB] text-[#B45309] font-semibold flex items-center gap-1 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-[#B45309]"></span> Pending Faculty Approval
+                </span>
+</td>
+<td class="p-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-space-xs rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" onclick="openRubricModal('Rohan Verma', '2024-CS-084', '42/50')" type="button">
+                    Rubric &amp; Answers
+                  </button>
+<button class="px-space-sm py-space-xs rounded-lg bg-[#ECFDF5] text-[#047857] font-label-md text-label-md font-semibold hover:bg-[#A7F3D0] transition-colors flex items-center gap-1" onclick="singleApprove('row-1', 'Rohan Verma')" type="button">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Approve
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors" id="row-2">
+<td class="p-space-md">
+<input checked="" class="candidate-checkbox rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="p-space-md">
+<div class="font-headline-sm text-headline-sm text-on-surface text-[15px]">Priya Sharma</div>
+<div class="font-label-sm text-label-sm text-primary font-semibold">2024-CS-085</div>
+</td>
+<td class="p-space-md">
+<div class="font-semibold text-on-surface">CS602 Mid-Sem</div>
+<div class="text-on-surface-variant text-[12px]">DBMS Architecture &amp; Indexing</div>
+</td>
+<td class="p-space-md">
+<div class="text-on-surface">Oct 24, 11:38 AM</div>
+<div class="flex items-center gap-1 text-[11px] font-semibold text-[#047857]">
+<span class="material-symbols-outlined text-[14px]">shield</span> 100% Clean Proctor
+                </div>
+</td>
+<td class="p-space-md">
+<div class="font-headline-sm text-headline-sm text-primary text-[16px]">48 <span class="text-on-surface-variant text-[13px] font-normal">/ 50</span></div>
+<div class="text-[11px] text-on-surface-variant">96.0% • Grade O</div>
+</td>
+<td class="p-space-md">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-[#FFFBEB] text-[#B45309] font-semibold flex items-center gap-1 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-[#B45309]"></span> Pending Faculty Approval
+                </span>
+</td>
+<td class="p-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-space-xs rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" onclick="openRubricModal('Priya Sharma', '2024-CS-085', '48/50')" type="button">
+                    Rubric &amp; Answers
+                  </button>
+<button class="px-space-sm py-space-xs rounded-lg bg-[#ECFDF5] text-[#047857] font-label-md text-label-md font-semibold hover:bg-[#A7F3D0] transition-colors flex items-center gap-1" onclick="singleApprove('row-2', 'Priya Sharma')" type="button">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Approve
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors" id="row-3">
+<td class="p-space-md">
+<input checked="" class="candidate-checkbox rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="p-space-md">
+<div class="font-headline-sm text-headline-sm text-on-surface text-[15px]">Karan Mehra</div>
+<div class="font-label-sm text-label-sm text-primary font-semibold">2024-CS-086</div>
+</td>
+<td class="p-space-md">
+<div class="font-semibold text-on-surface">CS602 Mid-Sem</div>
+<div class="text-on-surface-variant text-[12px]">DBMS Architecture &amp; Indexing</div>
+</td>
+<td class="p-space-md">
+<div class="text-on-surface">Oct 24, 11:45 AM</div>
+<div class="flex items-center gap-1 text-[11px] font-semibold text-[#B45309]">
+<span class="material-symbols-outlined text-[14px]">visibility</span> 94% Proctor (1 tab blur)
+                </div>
+</td>
+<td class="p-space-md">
+<div class="font-headline-sm text-headline-sm text-primary text-[16px]">39 <span class="text-on-surface-variant text-[13px] font-normal">/ 50</span></div>
+<div class="text-[11px] text-on-surface-variant">78.0% • Grade B+</div>
+</td>
+<td class="p-space-md">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-[#FFFBEB] text-[#B45309] font-semibold flex items-center gap-1 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-[#B45309]"></span> Pending Faculty Approval
+                </span>
+</td>
+<td class="p-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-space-xs rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" onclick="openRubricModal('Karan Mehra', '2024-CS-086', '39/50')" type="button">
+                    Rubric &amp; Answers
+                  </button>
+<button class="px-space-sm py-space-xs rounded-lg bg-[#ECFDF5] text-[#047857] font-label-md text-label-md font-semibold hover:bg-[#A7F3D0] transition-colors flex items-center gap-1" onclick="singleApprove('row-3', 'Karan Mehra')" type="button">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Approve
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors" id="row-4">
+<td class="p-space-md">
+<input checked="" class="candidate-checkbox rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="p-space-md">
+<div class="font-headline-sm text-headline-sm text-on-surface text-[15px]">Ananya Deshmukh</div>
+<div class="font-label-sm text-label-sm text-primary font-semibold">2024-CS-087</div>
+</td>
+<td class="p-space-md">
+<div class="font-semibold text-on-surface">CS602 Mid-Sem</div>
+<div class="text-on-surface-variant text-[12px]">DBMS Architecture &amp; Indexing</div>
+</td>
+<td class="p-space-md">
+<div class="text-on-surface">Oct 24, 11:30 AM</div>
+<div class="flex items-center gap-1 text-[11px] font-semibold text-[#047857]">
+<span class="material-symbols-outlined text-[14px]">shield</span> 100% Clean Proctor
+                </div>
+</td>
+<td class="p-space-md">
+<div class="font-headline-sm text-headline-sm text-primary text-[16px]">46 <span class="text-on-surface-variant text-[13px] font-normal">/ 50</span></div>
+<div class="text-[11px] text-on-surface-variant">92.0% • Grade O</div>
+</td>
+<td class="p-space-md">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-[#FFFBEB] text-[#B45309] font-semibold flex items-center gap-1 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-[#B45309]"></span> Pending Faculty Approval
+                </span>
+</td>
+<td class="p-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-space-xs rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" onclick="openRubricModal('Ananya Deshmukh', '2024-CS-087', '46/50')" type="button">
+                    Rubric &amp; Answers
+                  </button>
+<button class="px-space-sm py-space-xs rounded-lg bg-[#ECFDF5] text-[#047857] font-label-md text-label-md font-semibold hover:bg-[#A7F3D0] transition-colors flex items-center gap-1" onclick="singleApprove('row-4', 'Ananya Deshmukh')" type="button">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Approve
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors" id="row-5">
+<td class="p-space-md">
+<input checked="" class="candidate-checkbox rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</td>
+<td class="p-space-md">
+<div class="font-headline-sm text-headline-sm text-on-surface text-[15px]">Tanmay Bhattacharya</div>
+<div class="font-label-sm text-label-sm text-primary font-semibold">2024-CS-088</div>
+</td>
+<td class="p-space-md">
+<div class="font-semibold text-on-surface">CS602 Mid-Sem</div>
+<div class="text-on-surface-variant text-[12px]">DBMS Architecture &amp; Indexing</div>
+</td>
+<td class="p-space-md">
+<div class="text-on-surface">Oct 24, 11:49 AM</div>
+<div class="flex items-center gap-1 text-[11px] font-semibold text-[#047857]">
+<span class="material-symbols-outlined text-[14px]">shield</span> 100% Clean Proctor
+                </div>
+</td>
+<td class="p-space-md">
+<div class="font-headline-sm text-headline-sm text-primary text-[16px]">44 <span class="text-on-surface-variant text-[13px] font-normal">/ 50</span></div>
+<div class="text-[11px] text-on-surface-variant">88.0% • Grade A+</div>
+</td>
+<td class="p-space-md">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-[#FFFBEB] text-[#B45309] font-semibold flex items-center gap-1 w-max">
+<span class="w-1.5 h-1.5 rounded-full bg-[#B45309]"></span> Pending Faculty Approval
+                </span>
+</td>
+<td class="p-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-space-sm py-space-xs rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" onclick="openRubricModal('Tanmay Bhattacharya', '2024-CS-088', '44/50')" type="button">
+                    Rubric &amp; Answers
+                  </button>
+<button class="px-space-sm py-space-xs rounded-lg bg-[#ECFDF5] text-[#047857] font-label-md text-label-md font-semibold hover:bg-[#A7F3D0] transition-colors flex items-center gap-1" onclick="singleApprove('row-5', 'Tanmay Bhattacharya')" type="button">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Approve
+                  </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- MODAL 1: Create New Exam Modal -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-space-md" id="create-exam-modal">
+<div class="bg-surface-container-lowest w-full max-w-xl rounded-xl shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+<div class="bg-surface-container p-space-lg flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">post_add</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Create Examination Module</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Configure test timing, curriculum linkage, and security rules</p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1" onclick="closeExamModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="p-space-lg flex flex-col gap-space-md" onsubmit="handleCreateExam(event)">
+<div class="grid grid-cols-2 gap-space-md">
+<div>
+<label class="font-label-sm text-label-sm text-secondary block mb-1">Subject Allotment</label>
+<select class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg text-body-sm text-on-surface focus:outline-none">
+<option>CS602 - Database Systems</option>
+<option>CS605 - Design &amp; Analysis of Algorithms</option>
+<option>CS701 - Distributed Systems &amp; Cloud</option>
+</select>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-secondary block mb-1">Exam Type</label>
+<select class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg text-body-sm text-on-surface focus:outline-none">
+<option>Mid-Term Cycle</option>
+<option>End-Semester Final</option>
+<option>Practical Laboratory</option>
+<option>Surprise Quiz</option>
+</select>
+</div>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-secondary block mb-1">Exam Title</label>
+<input class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg text-body-sm text-on-surface focus:outline-none" placeholder="e.g. Relational Calculus &amp; Normalization Assessment" required="" type="text"/>
+</div>
+<div class="grid grid-cols-3 gap-space-sm">
+<div>
+<label class="font-label-sm text-label-sm text-secondary block mb-1">Duration (Mins)</label>
+<input class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg text-body-sm text-on-surface focus:outline-none" type="number" value="90"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-secondary block mb-1">Max Marks</label>
+<input class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg text-body-sm text-on-surface focus:outline-none" type="number" value="50"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-secondary block mb-1">Passing Mark</label>
+<input class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg text-body-sm text-on-surface focus:outline-none" type="number" value="20"/>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface">Automated AI Proctoring</span>
+<input checked="" class="rounded text-primary focus:ring-0" type="checkbox"/>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Flags tab switching, background noise, and multi-face detections automatically.</span>
+</div>
+<div class="flex items-center justify-end gap-space-sm mt-space-sm">
+<button class="px-space-md py-space-sm rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" onclick="closeExamModal()" type="button">
+            Cancel
+          </button>
+<button class="px-space-md py-space-sm rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-sm hover:opacity-95 transition-opacity" type="submit">
+            Proceed to Question Builder
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- MODAL 2: Answer Script & Rubric Review Modal -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-space-md" id="rubric-modal">
+<div class="bg-surface-container-lowest w-full max-w-2xl rounded-xl shadow-xl overflow-hidden">
+<div class="bg-surface-container p-space-lg flex items-center justify-between">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface" id="modal-student-name">Candidate Evaluation</span>
+<span class="font-label-sm text-label-sm text-primary font-bold bg-surface-container-high px-space-xs py-0.5 rounded" id="modal-student-roll">2024-CS-084</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">CS602 Mid-Sem Examination Submission Record</p>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1" onclick="closeRubricModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-space-lg flex flex-col gap-space-md max-h-[716px] overflow-y-auto">
+<!-- Rubric Breakdown -->
+<div class="p-space-md bg-surface-container-low rounded-lg flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase">Assessed Total Score</span>
+<div class="font-display-lg text-display-lg text-primary leading-tight font-bold" id="modal-score">42 / 50</div>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-secondary">Proctor Verification</span>
+<span class="font-label-md text-label-md text-[#047857] font-semibold flex items-center justify-end gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span> Honor Code Verified
+            </span>
+</div>
+</div>
+<!-- Sample Response Audit -->
+<div class="flex flex-col gap-space-sm">
+<h4 class="font-label-lg text-label-lg text-on-surface">Sample Item Analysis</h4>
+<div class="p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary">Question 4: B+ Tree Insertion Complexity</span>
+<span class="font-label-sm text-label-sm text-[#047857] font-bold">5 / 5 Marks</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-1">Student answered: "O(log_B N) where B is the order factor, splits propagate upward with recursive node balancing."</p>
+<div class="font-body-sm text-body-sm text-primary mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span> Rubric match: Exact key formula &amp; balancing rationale confirmed.
+            </div>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary">Question 9: Concurrency Control in Two-Phase Locking</span>
+<span class="font-label-sm text-label-sm text-[#B45309] font-bold">3 / 5 Marks</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-1">Student answered: "Strict 2PL prevents cascading rollbacks by holding write locks until transaction completion."</p>
+<div class="font-body-sm text-body-sm text-secondary mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check</span> Faculty Note: Partial deduction - missing proof for rigorous 2PL distinction.
+            </div>
+</div>
+</div>
+<!-- Faculty Sign-off Remarks -->
+<div>
+<label class="font-label-sm text-label-sm text-secondary block mb-1">Faculty Moderation Note</label>
+<input class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg text-body-sm text-on-surface focus:outline-none" type="text" value="Grade validated against rubric standards. Candidate approved for portal display."/>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md flex items-center justify-end gap-space-sm">
+<button class="px-space-md py-space-sm rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" onclick="closeRubricModal()" type="button">
+          Close Preview
+        </button>
+<button class="px-space-md py-space-sm rounded-lg bg-[#047857] text-on-tertiary font-label-md text-label-md shadow-sm hover:opacity-95 transition-opacity flex items-center gap-1" onclick="approveFromModal()" type="button">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Approve &amp; Release Score</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Notification Toast -->
+<div class="fixed bottom-6 right-6 z-50 hidden items-center gap-space-sm bg-inverse-surface text-inverse-on-surface px-space-md py-space-sm rounded-xl shadow-lg transition-all transform duration-300" id="status-toast">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed">task_alt</span>
+<span class="font-label-md text-label-md" id="toast-message">Action completed successfully.</span>
+</div>
+</div>
+<script>
+  function switchTab(tabIndex) {
+    const tab1Content = document.getElementById('tab-content-1');
+    const tab2Content = document.getElementById('tab-content-2');
+    const tab1Btn = document.getElementById('tab-btn-1');
+    const tab2Btn = document.getElementById('tab-btn-2');
+
+    if (tabIndex === 1) {
+      tab1Content.classList.remove('hidden');
+      tab2Content.classList.add('hidden');
+      tab1Btn.className = 'flex items-center gap-space-xs px-space-md py-space-sm rounded-lg font-label-md text-label-md transition-all bg-primary-container text-on-primary shadow-sm';
+      tab2Btn.className = 'flex items-center gap-space-xs px-space-md py-space-sm rounded-lg font-label-md text-label-md transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface';
+    } else {
+      tab1Content.classList.add('hidden');
+      tab2Content.classList.remove('hidden');
+      tab2Btn.className = 'flex items-center gap-space-xs px-space-md py-space-sm rounded-lg font-label-md text-label-md transition-all bg-primary-container text-on-primary shadow-sm';
+      tab1Btn.className = 'flex items-center gap-space-xs px-space-md py-space-sm rounded-lg font-label-md text-label-md transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface';
+    }
+  }
+
+  function showToast(message) {
+    const toast = document.getElementById('status-toast');
+    const text = document.getElementById('toast-message');
+    text.innerText = message;
+    toast.classList.remove('hidden');
+    toast.classList.add('flex');
+    setTimeout(() => {
+      toast.classList.add('hidden');
+      toast.classList.remove('flex');
+    }, 3200);
+  }
+
+  function openExamModal() {
+    document.getElementById('create-exam-modal').classList.remove('hidden');
+  }
+
+  function closeExamModal() {
+    document.getElementById('create-exam-modal').classList.add('hidden');
+  }
+
+  function handleCreateExam(event) {
+    event.preventDefault();
+    closeExamModal();
+    showToast('New Exam Module draft saved. Opening Question Builder...');
+  }
+
+  let activeModalRow = null;
+
+  function openRubricModal(name, roll, score) {
+    document.getElementById('modal-student-name').innerText = name;
+    document.getElementById('modal-student-roll').innerText = roll;
+    document.getElementById('modal-score').innerText = score;
+    document.getElementById('rubric-modal').classList.remove('hidden');
+  }
+
+  function closeRubricModal() {
+    document.getElementById('rubric-modal').classList.add('hidden');
+  }
+
+  function approveFromModal() {
+    closeRubricModal();
+    showToast('Result approved and published to candidate portal.');
+  }
+
+  function singleApprove(rowId, name) {
+    const row = document.getElementById(rowId);
+    if (row) {
+      row.style.opacity = '0.4';
+      row.style.pointerEvents = 'none';
+      const statusCell = row.children[5];
+      if (statusCell) {
+        statusCell.innerHTML = '<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-[#ECFDF5] text-[#047857] font-semibold flex items-center gap-1 w-max"><span class="material-symbols-outlined text-[14px]">check_circle</span> Published to Portal</span>';
+      }
+      showToast('Approved and released results for ' + name);
+      updateBadgeCount(-1);
+    }
+  }
+
+  function toggleSelectAll(masterCheckbox) {
+    const checkboxes = document.querySelectorAll('.candidate-checkbox');
+    checkboxes.forEach(cb => cb.checked = masterCheckbox.checked);
+    document.getElementById('bulk-btn-text').innerText = masterCheckbox.checked 
+      ? 'Bulk Approve Selected (12)' 
+      : 'Bulk Approve Selected (0)';
+  }
+
+  function bulkApprove() {
+    const checkboxes = document.querySelectorAll('.candidate-checkbox:checked');
+    if (checkboxes.length === 0) {
+      showToast('Please select at least one candidate submission.');
+      return;
+    }
+    checkboxes.forEach(cb => {
+      const row = cb.closest('tr');
+      if (row) {
+        row.style.opacity = '0.4';
+        row.style.pointerEvents = 'none';
+        const statusCell = row.children[5];
+        if (statusCell) {
+          statusCell.innerHTML = '<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-[#ECFDF5] text-[#047857] font-semibold flex items-center gap-1 w-max"><span class="material-symbols-outlined text-[14px]">check_circle</span> Published to Portal</span>';
+        }
+      }
+    });
+    showToast('Bulk Approved: ' + checkboxes.length + ' student results released to portal.');
+    updateBadgeCount(-checkboxes.length);
+  }
+
+  function updateBadgeCount(delta) {
+    const badge = document.getElementById('queue-badge-count');
+    let current = parseInt(badge.innerText, 10);
+    current = Math.max(0, current + delta);
+    badge.innerText = current;
+  }
+
+  function exportModerationSheet() {
+    showToast('Exporting certified CSV Moderation Sheet for Council...');
+  }
+</script></main><footer class="w-full bg-surface-container-lowest shadow-[0_-1px_8px_rgba(0,0,0,0.03)]"><div class="w-full px-space-lg py-space-md flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm text-on-surface-variant"><span class="font-label-sm text-label-sm">ParikshaGuru Assessment Infrastructure v4.8.2</span><span class="w-1 h-1 rounded-full bg-outline-variant"></span><span class="font-label-sm text-label-sm">Institution ID: IN-ACAD-6620</span></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container text-on-surface"><span class="material-symbols-outlined text-[16px] text-primary">gavel</span><span class="font-label-sm text-label-sm">Honor Code Verified</span></div><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-low text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-[#059669]"></span><span class="font-label-sm text-label-sm">Server 18ms latency</span></div></div></div></footer></div></body></html>

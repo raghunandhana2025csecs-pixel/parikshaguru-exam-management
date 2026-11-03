@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+  <script src="/config.js"></script><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script src="../sign_in_registration/client-integration.js"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-surface-variant":"#444653","primary-container":"#1e40af","surface-container":"#eaedff","surface-tint":"#3755c3","surface-dim":"#d2d9f4","tertiary-fixed":"#e2dfff","primary-fixed-dim":"#b8c4ff","surface-container-low":"#f2f3ff","on-primary-fixed":"#001453","inverse-on-surface":"#eef0ff","on-primary-container":"#a8b8ff","on-tertiary":"#ffffff","on-secondary-fixed-variant":"#3f465c","on-error-container":"#93000a","on-error":"#ffffff","primary-fixed":"#dde1ff","inverse-surface":"#283044","on-secondary-container":"#5c647a","inverse-primary":"#b8c4ff","surface-bright":"#faf8ff","secondary-container":"#dae2fd","on-secondary":"#ffffff","on-tertiary-container":"#b6b4ff","tertiary-container":"#382ad0","surface-container-lowest":"#ffffff","primary":"#00288e","surface-container-highest":"#dae2fd","secondary":"#565e74","surface-variant":"#dae2fd","secondary-fixed-dim":"#bec6e0","surface":"#faf8ff","on-surface":"#131b2e","error-container":"#ffdad6","on-tertiary-fixed":"#0f0069","outline-variant":"#c4c5d5","on-background":"#131b2e","outline":"#757684","on-tertiary-fixed-variant":"#3323cc","on-primary-fixed-variant":"#173bab","surface-container-high":"#e2e7ff","tertiary-fixed-dim":"#c3c0ff","background":"#faf8ff","on-secondary-fixed":"#131b2e","secondary-fixed":"#dae2fd","tertiary":"#2000b1","error":"#ba1a1a","on-primary":"#ffffff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-xl":"2rem","margin-mobile":"1rem",gutter:"1.5rem","space-sm":"0.5rem","gutter-mobile":"1rem","space-xs":"0.25rem","space-md":"1rem",margin:"2rem","space-lg":"1.5rem"},fontFamily:{"body-lg":["Inter"],"headline-sm":["Plus Jakarta Sans"],"label-lg":["Inter"],"display-lg":["Plus Jakarta Sans"],"body-md":["Inter"],"headline-xl":["Plus Jakarta Sans"],"label-sm":["Inter"],"headline-lg":["Plus Jakarta Sans"],"label-md":["Inter"],"headline-xl-mobile":["Plus Jakarta Sans"],"body-sm":["Inter"],"headline-md":["Plus Jakarta Sans"]},fontSize:{"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-sm":["18px",{lineHeight:"24px",fontWeight:"600"}],"label-lg":["14px",{lineHeight:"20px",letterSpacing:"0.01em",fontWeight:"600"}],"display-lg":["48px",{lineHeight:"56px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"headline-xl":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"600"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"600"}],"headline-xl-mobile":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"700"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"headline-md":["22px",{lineHeight:"28px",fontWeight:"600"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-40 flex flex-col shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 flex items-center gap-space-sm px-space-lg bg-surface-container-lowest"><img alt="ParikshaGuru Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrpWrnZGOifc2LpIBoJKow4mZ1k3Wbrq0HTBqZPyRfNPN8qvKjgScHdOnkTU1qxKxrDw6qDxqluFzyVza55TES4zz_Nq9oinkTpxJmdJDYNY67cxQ5yluVLPFdRePjb9KW7VkZj1ZFAvCV_UyYICKSbgFTNQ5QhLqHjD2U2AW9lBfNQ7tKzoSoVBcNrWXqINrZTUjx1yylLDnLoS7MkM1TNEW7Su3vYAPNM64TZCY"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">ParikshaGuru</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Exam Portal</span></div></div><div class="flex-1 overflow-y-auto px-space-md py-space-sm"><div class="px-space-sm py-space-xs font-label-sm text-label-sm text-secondary uppercase tracking-wider">Student Space</div><nav class="flex flex-col gap-space-xs mb-space-md" data-active-classes="bg-primary-container text-on-primary font-label-lg"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg transition-colors bg-primary-container text-on-primary font-label-lg" data-path="student-dashboard" href="#"><span class="material-symbols-outlined text-[20px]">space_dashboard</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="available-exams" href="#"><span class="material-symbols-outlined text-[20px]">event_available</span><span>Available Exams</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="active-assessments" href="#"><span class="material-symbols-outlined text-[20px]">timer</span><span>Active Assessments</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="my-results" href="#"><span class="material-symbols-outlined text-[20px]">workspace_premium</span><span>My Results</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="student-profile" href="#"><span class="material-symbols-outlined text-[20px]">badge</span><span>My Profile</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="support-desk" href="#"><span class="material-symbols-outlined text-[20px]">contact_support</span><span>Support</span></a></nav><div class="px-space-sm py-space-xs font-label-sm text-label-sm text-secondary uppercase tracking-wider">Faculty &amp; Admin</div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-lg"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="faculty-overview" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span><span>Overview</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="subject-management" href="#"><span class="material-symbols-outlined text-[20px]">menu_book</span><span>Subject Management</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="exam-builder" href="#"><span class="material-symbols-outlined text-[20px]">edit_document</span><span>Exam Builder</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="grading-review" href="#"><span class="material-symbols-outlined text-[20px]">rule</span><span>Submissions &amp; Grading</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="results-release" href="#"><span class="material-symbols-outlined text-[20px]">published_with_changes</span><span>Results Release</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-md text-label-md" data-path="faculty-profile" href="#"><span class="material-symbols-outlined text-[20px]">account_box</span><span>Faculty Profile</span></a></nav></div><div class="p-space-md bg-surface-container-low"><div class="flex items-center justify-between p-space-sm bg-surface-container-lowest rounded-lg"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-primary">verified</span><span class="font-label-sm text-label-sm text-on-surface font-semibold">National Council</span></div><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant">ISO 9001</span></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-30 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-secondary-container text-on-secondary-container"><span class="material-symbols-outlined text-[16px] text-primary">school</span><span class="font-label-sm text-label-sm">Role: Student (ENR-2024-902)</span><button class="hover:opacity-80 transition-opacity" title="Switch portal role" type="button"><span class="material-symbols-outlined text-[14px]">swap_horiz</span></button></div><div class="hidden md:flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container text-on-surface"><span class="material-symbols-outlined text-[16px] text-primary">calendar_month</span><span class="font-label-sm text-label-sm font-semibold">AY 2024-25 | Fall Mid-Term Cycle</span></div></div><div class="flex items-center gap-space-md"><button class="relative p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" title="Examination Notices" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1 right-1 w-2.5 h-2.5 bg-error rounded-full ring-2 ring-surface"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="hidden sm:flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Aarav Sharma</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">B.Tech CSE - Yr 3</span></div><div class="relative flex items-center gap-space-xs cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnPwy-xKhexw_Jg6VmwrQYeM66vK9TqKg4nSeHmrVahLkbcO6G_z2y5QdY3RAZnfbZ0UtgoqZfAqrGGDg9l4D-XlEC5zajP66q6_ld1RJQcAkdA34JrYJKpDKeiko4IdYA9IiPuXbRU7JTqAF2j6YCKq_zp8Jh6BW0PuV-pVyM17bN_qLz1UVhsbtBZ4p6nIkaOS7fMJS2N5T3Ii9ON536jwwljHLlW2EdQCnXqjU"/><span class="material-symbols-outlined text-[18px] text-on-surface-variant">expand_more</span></div></div></div></div></header><main class="w-full flex-1 pt-16 bg-surface px-space-lg pb-space-lg"><div class="flex flex-col w-full">
+<!-- Hero / Welcome Banner -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-primary to-primary-container text-on-primary p-space-lg mb-space-lg shadow-md">
+<div class="absolute right-0 -bottom-8 opacity-10 pointer-events-none select-none">
+<svg fill="currentColor" height="240" viewbox="0 0 24 24" width="340">
+<path d="M12 3L1 9L12 15L21 10.09V17H23V9M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18Z"></path>
+</svg>
+</div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="space-y-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-surface-container/20 text-on-primary backdrop-blur-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            Mid-Semester Examination Spring 2025
+          </span>
+<span class="text-label-sm font-label-sm text-primary-fixed-dim">
+            Friday, March 7, 2025 • 10:45 AM IST
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg tracking-tight text-on-primary">
+          Welcome back, Rohan Verma
+        </h1>
+<p class="font-body-md text-body-md text-primary-fixed flex items-center gap-x-2 flex-wrap">
+<span class="font-semibold text-on-primary">Roll: 2024-CS-084</span>
+<span>•</span>
+<span>B.Tech Computer Science &amp; Engineering</span>
+<span>•</span>
+<span class="bg-primary-fixed/20 px-2 py-0.5 rounded text-label-sm font-label-sm text-on-primary">Semester VI</span>
+</p>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-lowest/10 backdrop-blur-md p-space-sm rounded-lg">
+<div class="p-2 rounded bg-surface-container-lowest/15">
+<span class="material-symbols-outlined text-[26px] text-surface-bright">verified_user</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-primary-fixed-dim">Biometric Status</div>
+<div class="font-label-lg text-label-lg text-on-primary font-bold flex items-center gap-1">
+            Verified Candidate
+            <span class="material-symbols-outlined text-[16px] text-emerald-300">check_circle</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Key Metric Summary Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mb-space-lg">
+<!-- Metric 1: Available Exams -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm transition hover:shadow-md flex flex-col justify-between">
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Assessment Status</span>
+<div class="font-headline-lg text-headline-lg text-on-surface font-bold flex items-baseline gap-2">
+            3 <span class="font-label-md text-label-md text-secondary font-normal">Active Today</span>
+</div>
+</div>
+<div class="p-2 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined text-[24px]">assignment_turned_in</span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-primary-fixed text-on-primary-fixed font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> 1 Expiring Today
+        </span>
+<a class="font-label-sm text-label-sm text-primary hover:underline flex items-center gap-0.5" href="#catalogue">
+          Inspect Queue <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Metric 2: Completed Attempts -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm transition hover:shadow-md flex flex-col justify-between">
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Evaluation History</span>
+<div class="font-headline-lg text-headline-lg text-on-surface font-bold flex items-baseline gap-2">
+            8 <span class="font-label-md text-label-md text-secondary font-normal">Finalized</span>
+</div>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-high text-primary">
+<span class="material-symbols-outlined text-[24px]">task</span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">done_all</span> 100% Proctored Integrity
+        </span>
+<span class="font-label-sm text-label-sm text-secondary">AY 2024-25</span>
+</div>
+</div>
+<!-- Metric 3: Results Awaiting Approval -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm transition hover:shadow-md flex flex-col justify-between relative group">
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Pending Review</span>
+<div class="relative cursor-pointer">
+<span class="material-symbols-outlined text-[16px] text-secondary hover:text-on-surface">info</span>
+<div class="absolute bottom-full mb-1.5 left-1/2 -translate-x-1/2 hidden group-hover:block w-48 p-2 bg-inverse-surface text-inverse-on-surface text-label-sm font-label-sm rounded-lg shadow-lg z-20 pointer-events-none text-center">
+                Scores withheld until department verification and dean endorsement.
+              </div>
+</div>
+</div>
+<div class="font-headline-lg text-headline-lg text-on-surface font-bold flex items-baseline gap-2">
+            2 <span class="font-label-md text-label-md text-secondary font-normal">Papers</span>
+</div>
+</div>
+<div class="p-2 rounded-lg bg-amber-50 text-amber-700">
+<span class="material-symbols-outlined text-[24px]">hourglass_top</span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-amber-100 text-amber-800 font-semibold">
+          Department Auditing
+        </span>
+<span class="font-label-sm text-label-sm text-secondary font-mono">CS601, CS604</span>
+</div>
+</div>
+</div>
+<!-- Primary Content Grid: Exam Catalogue & Side Widgets -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- Left Main Column: Available Exams Catalogue (8 cols) -->
+<div class="xl:col-span-8 flex flex-col gap-space-md" id="catalogue">
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<!-- Section Header & Filter Tabs -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md pb-space-md">
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">
+                Available Examinations
+              </h2>
+<span class="px-2 py-0.5 text-label-sm font-label-sm bg-surface-container-high text-primary font-bold rounded-full">
+                Semester VI
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Select an authorized session to launch proctored terminal. Ensure test environment compliance.
+            </p>
+</div>
+<!-- Dynamic Tabs -->
+<div class="inline-flex p-1 bg-surface-container-low rounded-lg self-start sm:self-auto" id="filterTabGroup">
+<button class="tab-btn px-3 py-1.5 rounded-md font-label-sm text-label-sm font-semibold bg-surface-container-lowest text-primary shadow-xs transition" onclick="filterExams('all', this)" type="button">
+              All (3)
+            </button>
+<button class="tab-btn px-3 py-1.5 rounded-md font-label-sm text-label-sm font-semibold text-secondary hover:text-on-surface transition" onclick="filterExams('cs', this)" type="button">
+              Computer Science
+            </button>
+<button class="tab-btn px-3 py-1.5 rounded-md font-label-sm text-label-sm font-semibold text-secondary hover:text-on-surface transition" onclick="filterExams('math', this)" type="button">
+              Mathematics
+            </button>
+<button class="tab-btn px-3 py-1.5 rounded-md font-label-sm text-label-sm font-semibold text-secondary hover:text-on-surface transition" onclick="filterExams('elec', this)" type="button">
+              Electronics
+            </button>
+</div>
+</div>
+<!-- Exam List Container -->
+<div class="flex flex-col gap-space-md" id="examContainer">
+<!-- Exam 1: CS602 - Ready to Start -->
+<div class="exam-card group bg-surface-container-lowest p-space-md rounded-xl transition hover:shadow-md flex flex-col justify-between" data-category="cs">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm mb-space-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container font-mono text-primary font-bold">
+                    CS602
+                  </span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-emerald-100 text-emerald-800 font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-ping"></span>
+                    Ready to Start
+                  </span>
+<span class="text-label-sm font-label-sm text-secondary">
+                    Paper Code: MID-2025-DBMS
+                  </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                  Advanced Database Management Systems
+                </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Mid-Semester Summative Evaluation • Topics: Concurrency, Query Optimization, Distributed Storage &amp; WAL.
+                </p>
+</div>
+<div class="sm:text-right shrink-0 bg-surface-container-low sm:bg-transparent p-2 sm:p-0 rounded-lg">
+<div class="font-headline-sm text-headline-sm text-primary font-bold">50 Marks</div>
+<div class="font-label-sm text-label-sm text-secondary">Weightage: 30%</div>
+</div>
+</div>
+<!-- Parameters Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm p-space-sm rounded-lg bg-surface-container-low mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">timer</span>
+<div>
+<div class="font-label-sm text-label-sm text-secondary">Duration</div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">60 Mins</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">quiz</span>
+<div>
+<div class="font-label-sm text-label-sm text-secondary">Format</div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">30 MCQ + 5 SAQ</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">security</span>
+<div>
+<div class="font-label-sm text-label-sm text-secondary">Proctoring</div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">AI + Faculty Room</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">lock_clock</span>
+<div>
+<div class="font-label-sm text-label-sm text-secondary">Window Closes</div>
+<div class="font-label-md text-label-md text-error font-semibold">01:30 PM Today</div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">check_box</span>
+<span>Camera feed &amp; full-screen lock required</span>
+</div>
+<button class="px-space-md py-2.5 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg font-bold hover:bg-primary-container transition shadow-sm flex items-center justify-center gap-2" onclick="openInstructionsModal('CS602', 'Advanced Database Management Systems')" type="button">
+<span>Start Exam</span>
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+</div>
+</div>
+<!-- Exam 2: CS605 - Scheduled 2:00 PM -->
+<div class="exam-card group bg-surface-container-lowest p-space-md rounded-xl transition hover:shadow-md flex flex-col justify-between" data-category="cs">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm mb-space-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container font-mono text-primary font-bold">
+                    CS605
+                  </span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-secondary-container text-on-secondary-container font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                    Starts 2:00 PM Today
+                  </span>
+<span class="text-label-sm font-label-sm text-secondary">
+                    Paper Code: MID-2025-DAA
+                  </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                  Design &amp; Analysis of Algorithms
+                </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Mid-Semester Examination • Dynamic Programming, Max Flow Min Cut, NP-Completeness Reductions.
+                </p>
+</div>
+<div class="sm:text-right shrink-0 bg-surface-container-low sm:bg-transparent p-2 sm:p-0 rounded-lg">
+<div class="font-headline-sm text-headline-sm text-primary font-bold">75 Marks</div>
+<div class="font-label-sm text-label-sm text-secondary">Weightage: 35%</div>
+</div>
+</div>
+<!-- Parameters Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm p-space-sm rounded-lg bg-surface-container-low mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">timer</span>
+<div>
+<div class="font-label-sm text-label-sm text-secondary">Duration</div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">90 Mins</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">quiz</span>
+<div>
+<div class="font-label-sm text-label-sm text-secondary">Format</div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">40 Questions</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">timer_off</span>
+<div>
+<div class="font-label-sm text-label-sm text-secondary">Entry Closes</div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">02:15 PM</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">calculate</span>
+<div>
+<div class="font-label-sm text-label-sm text-secondary">Virtual Calc</div>
+<div class="font-label-md text-label-md text-emerald-700 font-semibold">Allowed (Built-in)</div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-amber-600">notifications_active</span>
+<span>Proctored window unlocks in 3 hours 15 minutes</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container text-on-surface font-label-lg text-label-lg font-semibold hover:bg-surface-container-high transition flex items-center gap-2" onclick="showSyllabusDrawer('CS605')" type="button">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+<span>View Syllabus &amp; Rules</span>
+</button>
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container-high text-secondary font-label-lg text-label-lg font-bold opacity-60 cursor-not-allowed" disabled="" type="button">
+                  Locked
+                </button>
+</div>
+</div>
+</div>
+<!-- Exam 3: MA601 - In Progress / Resume -->
+<div class="exam-card group bg-surface-container-lowest p-space-md rounded-xl transition hover:shadow-md flex flex-col justify-between" data-category="math">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm mb-space-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-surface-container font-mono text-primary font-bold">
+                    MA601
+                  </span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-blue-100 text-primary-container font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">motion_photos_paused</span>
+                    Attempt in Progress
+                  </span>
+<span class="text-label-sm font-label-sm text-secondary">
+                    Paper Code: MID-2025-DPST
+                  </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">
+                  Discrete Probability &amp; Stochastic Processes
+                </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Mid-Semester Session • Markov Chains, Poisson Processes, Generating Functions.
+                </p>
+</div>
+<div class="sm:text-right shrink-0 bg-surface-container-low sm:bg-transparent p-2 sm:p-0 rounded-lg">
+<div class="font-headline-sm text-headline-sm text-primary font-bold">50 Marks</div>
+<div class="font-label-sm text-label-sm text-secondary">Questions: 25 Items</div>
+</div>
+</div>
+<!-- Parameters Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm p-space-sm rounded-lg bg-surface-container-low mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">timelapse</span>
+<div>
+<div class="font-label-sm text-label-sm text-secondary">Time Remaining</div>
+<div class="font-label-md text-label-md text-error font-bold font-mono">42:18 Mins</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">bookmark_check</span>
+<div>
+<div class="font-label-sm text-label-sm text-secondary">Answered</div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">11 / 25 Items</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">history</span>
+<div>
+<div class="font-label-sm text-label-sm text-secondary">Paused At</div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">10:12 AM IST</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">sync</span>
+<div>
+<div class="font-label-sm text-label-sm text-secondary">State Sync</div>
+<div class="font-label-md text-label-md text-emerald-700 font-semibold">Cloud Cached</div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">restore</span>
+<span>Proctor authorized disconnection window: 15 mins validity</span>
+</div>
+<button class="px-space-md py-2.5 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg font-bold hover:bg-primary transition shadow-sm flex items-center justify-center gap-2" onclick="resumeAssessment('MA601')" type="button">
+<span>Resume Assessment</span>
+<span class="material-symbols-outlined text-[18px]">forward</span>
+</button>
+</div>
+</div>
+<!-- Empty State Container for Other Filters (e.g. Electronics) -->
+<div class="hidden flex-col items-center justify-center p-space-xl bg-surface-container-low rounded-xl text-center" id="emptyFilterState">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-secondary mb-space-sm">
+<span class="material-symbols-outlined text-[32px]">folder_off</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">No Examinations Scheduled</h4>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm mt-1">
+              There are currently no active or pending examinations under this discipline. You are clear for this category.
+            </p>
+<button class="mt-space-md px-space-md py-2 rounded-lg bg-surface-container-highest text-primary font-label-md text-label-md font-semibold hover:bg-surface-container transition" onclick="filterExams('all', document.querySelector('.tab-btn'))" type="button">
+              Reset Filters
+            </button>
+</div>
+</div>
+</div>
+<!-- Quick Tips Card -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-start gap-space-md">
+<div class="p-2 bg-surface-container-lowest rounded-lg text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">lightbulb</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface font-bold">Standard Honor Code &amp; Proctoring Rule #4</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Switching virtual desktop workspaces, pressing <code class="px-1 bg-surface-container rounded font-mono">Alt+Tab</code>, or disconnecting primary webcams initiates an immediate 10-second warning prior to auto-lock submission.
+          </p>
+</div>
+</div>
+</div>
+<!-- Right Sidebar Column: System Readiness & Status (4 cols) -->
+<div class="xl:col-span-4 flex flex-col gap-space-md">
+<!-- System Readiness Check Widget -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[22px] text-primary">fact_check</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+              System Readiness
+            </h3>
+</div>
+<span class="px-2 py-0.5 text-label-sm font-label-sm bg-emerald-100 text-emerald-800 rounded-full font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+            All Clear
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant pb-space-md">
+          Hardware and security verification for exam terminal access. Verified 2 minutes ago.
+        </p>
+<!-- Diagnostics Checklist -->
+<div class="flex flex-col gap-space-sm mb-space-md">
+<!-- Item 1: Camera -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">videocam</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Webcam Sensor</div>
+<div class="font-label-sm text-label-sm text-secondary">HD FaceTime Camera (1080p)</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-[20px] text-emerald-600">check_circle</span>
+</div>
+<!-- Item 2: Secure Browser Lock -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">lock</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Browser Lockdown Mode</div>
+<div class="font-label-sm text-label-sm text-secondary">Full Screen Sandbox Ready</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-[20px] text-emerald-600">check_circle</span>
+</div>
+<!-- Item 3: Audio Input -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">mic</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Microphone Sensitivity</div>
+<div class="font-label-sm text-label-sm text-secondary">Ambient Noise: 22 dB (Acceptable)</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-[20px] text-emerald-600">check_circle</span>
+</div>
+<!-- Item 4: Network Latency -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary">wifi</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Institutional Uplink</div>
+<div class="font-label-sm text-label-sm text-secondary">Pariksha CDN Node: Mumbai-01</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-label-md text-label-md text-emerald-700 font-bold font-mono">28 ms</div>
+<div class="font-label-sm text-label-sm text-secondary">Stable</div>
+</div>
+</div>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-container text-primary font-label-md text-label-md font-semibold hover:bg-surface-container-high transition flex items-center justify-center gap-1.5" onclick="runDiagnosticsAgain(this)" type="button">
+<span class="material-symbols-outlined text-[16px]">autorenew</span>
+<span>Re-run Hardware Diagnostics</span>
+</button>
+</div>
+<!-- Elective Course Status / Interactive Drawer Preview -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+            Electives Registry
+          </h3>
+<span class="font-label-sm text-label-sm text-secondary">Dept of CSE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+          Track semester department electives and open minors.
+        </p>
+<!-- Empty state presentation inside widget -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-[24px]">hotel_class</span>
+</div>
+<div class="font-label-lg text-label-lg text-on-surface font-bold">No Pending Elective Tests</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mt-1">
+            You have satisfied your Open Elective-II internal assessment submission for this cycle.
+          </p>
+<button class="mt-3 px-3 py-1.5 rounded-lg bg-surface-container-lowest text-primary font-label-sm text-label-sm font-semibold hover:bg-surface-container transition shadow-xs flex items-center gap-1" onclick="toggleElectivesDrawer()" type="button">
+<span>View Clearance Record</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+<!-- Support emergency footer banner -->
+<div class="mt-space-md pt-space-md border-t-0 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">support_agent</span>
+<span class="font-label-sm text-label-sm text-secondary">Invigilator Helpline: ext 409</span>
+</div>
+<a class="font-label-sm text-label-sm text-primary font-semibold hover:underline" href="#">FAQ Hub</a>
+</div>
+</div>
+</div>
+</div>
+<!-- INSTRUCTIONS MODAL (CS602) -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center p-space-md bg-inverse-surface/50 backdrop-blur-sm transition-all" id="instructionsModal">
+<div class="bg-surface-container-lowest rounded-xl max-w-xl w-full p-space-lg shadow-xl relative animate-in fade-in duration-200">
+<div class="flex items-start justify-between pb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">fact_check</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold" id="modalExamTitle">
+              CS602: Advanced DBMS
+            </h3>
+<span class="font-label-sm text-label-sm text-secondary">Standard Examination Candidate Undertaking</span>
+</div>
+</div>
+<button class="text-secondary hover:text-on-surface p-1 rounded-lg" onclick="closeInstructionsModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="space-y-space-sm text-body-md text-body-md text-on-surface-variant max-h-[614px] overflow-y-auto pr-2">
+<div class="p-space-sm rounded-lg bg-amber-50 text-amber-900 font-label-sm text-label-sm flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] shrink-0 text-amber-700">warning</span>
+<span>
+            Once started, the exam timer is server-bound. Refreshing or exiting will not stop the continuous countdown timer.
+          </span>
+</div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold pt-2">Rules &amp; Code of Conduct:</h4>
+<ul class="list-disc pl-5 space-y-1.5 font-body-sm text-body-sm">
+<li><strong>Proctored Environment:</strong> Continuous video &amp; microphone telemetry is streamed directly to faculty proctor console.</li>
+<li><strong>Calculators:</strong> An in-browser scientific calculator is provided. Physical calculators are strictly banned.</li>
+<li><strong>Negative Marking:</strong> Multiple choice questions carry 1 mark with -0.25 penalty for incorrect answers. Short answers carry no negative marks.</li>
+<li><strong>Submission Confirmation:</strong> You must click "Final Review &amp; Submit" before the zero mark. Automatic submission occurs at 60:00.</li>
+</ul>
+<div class="p-space-sm bg-surface-container-low rounded-lg mt-3">
+<label class="flex items-start gap-space-sm cursor-pointer select-none">
+<input class="mt-1 w-4 h-4 text-primary rounded border-outline focus:ring-primary" id="undertakingCheck" onchange="toggleLaunchBtn()" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-on-surface">
+              I, <strong>Rohan Verma (2024-CS-084)</strong>, confirm that my test workstation is free of disallowed electronic devices and agree to honor the university academic code.
+            </span>
+</label>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-lg">
+<button class="px-space-md py-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container-high transition" onclick="closeInstructionsModal()" type="button">
+          Cancel &amp; Return
+        </button>
+<button class="px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold opacity-50 cursor-not-allowed transition hover:bg-primary-container flex items-center gap-1.5" disabled="" id="launchExamBtn" onclick="launchExamSession()" type="button">
+<span>Enter Examination Room</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+<!-- SLIDE-OVER DRAWER: Syllabus & Rules Preview -->
+<div class="fixed inset-0 z-50 hidden bg-inverse-surface/40 backdrop-blur-sm transition-opacity" id="syllabusDrawer">
+<div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-surface-container-lowest shadow-2xl p-space-lg flex flex-col justify-between overflow-y-auto">
+<div>
+<div class="flex items-center justify-between pb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[24px] text-primary">menu_book</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Exam Specifications</h3>
+</div>
+<button class="p-1 rounded-lg text-secondary hover:text-on-surface" onclick="closeSyllabusDrawer()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg mb-space-md">
+<span class="font-label-sm text-label-sm text-secondary">Course Module:</span>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold">CS605: DAA</div>
+<div class="font-label-sm text-label-sm text-primary font-medium">Instructor: Prof. K. Venkatesh</div>
+</div>
+<div class="space-y-space-md">
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold mb-2">Scope of Modules:</h4>
+<div class="space-y-2">
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface">Unit 1: Divide &amp; Conquer Analysis</span>
+<span class="font-label-sm text-label-sm font-semibold text-primary">15% Wt.</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface">Unit 2: Dynamic Programming &amp; Greedy</span>
+<span class="font-label-sm text-label-sm font-semibold text-primary">40% Wt.</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface">Unit 3: Graph Algorithms &amp; Flow Networks</span>
+<span class="font-label-sm text-label-sm font-semibold text-primary">25% Wt.</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface">Unit 4: Intro to NP-Hard / Reductions</span>
+<span class="font-label-sm text-label-sm font-semibold text-primary">20% Wt.</span>
+</div>
+</div>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-on-surface font-bold mb-1">Approved Examination Materials:</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Scratchpad functionality provided directly on digital terminal. Physical paper sheets are not permitted under AI visual tracking.
+            </p>
+</div>
+</div>
+</div>
+<div class="pt-space-lg">
+<button class="w-full py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition" onclick="closeSyllabusDrawer()" type="button">
+          Dismiss Syllabus
+        </button>
+</div>
+</div>
+</div>
+<!-- SLIDE-OVER DRAWER: Electives Clearance Preview -->
+<div class="fixed inset-0 z-50 hidden bg-inverse-surface/40 backdrop-blur-sm transition-opacity" id="electivesDrawer">
+<div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-surface-container-lowest shadow-2xl p-space-lg flex flex-col justify-between overflow-y-auto">
+<div>
+<div class="flex items-center justify-between pb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[24px] text-primary">check_circle</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Elective Clearances</h3>
+</div>
+<button class="p-1 rounded-lg text-secondary hover:text-on-surface" onclick="toggleElectivesDrawer()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg mb-space-md">
+<div class="font-label-sm text-label-sm text-secondary">Student ID: Rohan Verma</div>
+<div class="font-label-md text-label-md text-on-surface font-bold">Enrollment: 2024-CS-084</div>
+</div>
+<div class="space-y-space-sm">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-bold">CS620: Cloud Computing Architectures</span>
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-emerald-100 text-emerald-800 font-bold">Cleared</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Continuous Assessment Score: 48/50 (96%)</div>
+<span class="font-label-sm text-label-sm text-secondary">Submitted: March 2, 2025</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-bold">HS601: Technology &amp; Society</span>
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-emerald-100 text-emerald-800 font-bold">Cleared</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Term Essay &amp; Review: A Grade</div>
+<span class="font-label-sm text-label-sm text-secondary">Verified by Humanities Board</span>
+</div>
+</div>
+</div>
+<div class="pt-space-lg">
+<button class="w-full py-2.5 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container-high transition" onclick="toggleElectivesDrawer()" type="button">
+          Close Record
+        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Vanilla Micro-Interactions Script -->
+<script>
+  function filterExams(category, btnElement) {
+    // Tab styles toggle
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-xs');
+      btn.classList.add('text-secondary');
+    });
+    btnElement.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-xs');
+    btnElement.classList.remove('text-secondary');
+
+    // Filter cards
+    const cards = document.querySelectorAll('.exam-card');
+    const emptyState = document.getElementById('emptyFilterState');
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const cardCat = card.getAttribute('data-category');
+      if (category === 'all' || cardCat === category) {
+        card.style.display = 'flex';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (visibleCount === 0) {
+      emptyState.classList.remove('hidden');
+      emptyState.classList.add('flex');
+    } else {
+      emptyState.classList.add('hidden');
+      emptyState.classList.remove('flex');
+    }
+  }
+
+  function openInstructionsModal(code, title) {
+    const modal = document.getElementById('instructionsModal');
+    const heading = document.getElementById('modalExamTitle');
+    heading.innerText = code + ': ' + title;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeInstructionsModal() {
+    const modal = document.getElementById('instructionsModal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    const chk = document.getElementById('undertakingCheck');
+    if (chk) chk.checked = false;
+    toggleLaunchBtn();
+  }
+
+  function toggleLaunchBtn() {
+    const chk = document.getElementById('undertakingCheck');
+    const btn = document.getElementById('launchExamBtn');
+    if (chk.checked) {
+      btn.disabled = false;
+      btn.classList.remove('opacity-50', 'cursor-not-allowed');
+    } else {
+      btn.disabled = true;
+      btn.classList.add('opacity-50', 'cursor-not-allowed');
+    }
+  }
+
+  async function launchExamSession() {
+    try {
+      showAlert("Initializing Exam...", "Starting secure assessment session...", false);
+      const res = await api.session.start(1);
+      window.location.href = `/exam-hall/code.html?sessionId=${res.sessionId}`;
+    } catch (err) {
+      alert("Could not start exam: " + (err.message || "Server error"));
+    }
+  }
+
+  async function resumeAssessment(code) {
+    try {
+      showAlert("Resuming Exam...", "Fetching active session...", false);
+      const res = await api.session.start(1);
+      window.location.href = `/exam-hall/code.html?sessionId=${res.sessionId}`;
+    } catch (err) {
+      alert("Could not resume exam: " + (err.message || "Server error"));
+    }
+  }
+
+  function showSyllabusDrawer(code) {
+    const drawer = document.getElementById('syllabusDrawer');
+    drawer.classList.remove('hidden');
+  }
+
+  function closeSyllabusDrawer() {
+    const drawer = document.getElementById('syllabusDrawer');
+    drawer.classList.add('hidden');
+  }
+
+  function toggleElectivesDrawer() {
+    const drawer = document.getElementById('electivesDrawer');
+    drawer.classList.toggle('hidden');
+  }
+
+  function runDiagnosticsAgain(btn) {
+    btn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">sync</span><span>Re-checking 4 Nodes...</span>';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-emerald-600">check</span><span>Diagnostics Complete - Ready</span>';
+      setTimeout(() => {
+        btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">autorenew</span><span>Re-run Hardware Diagnostics</span>';
+        btn.disabled = false;
+      }, 2500);
+    }, 1200);
+  }
+</script></main><footer class="w-full bg-surface-container-lowest shadow-[0_-1px_8px_rgba(0,0,0,0.03)]"><div class="w-full px-space-lg py-space-md flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm text-on-surface-variant"><span class="font-label-sm text-label-sm">ParikshaGuru Assessment Infrastructure v4.8.2</span><span class="w-1 h-1 rounded-full bg-outline-variant"></span><span class="font-label-sm text-label-sm">Institution ID: IN-ACAD-6620</span></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container text-on-surface"><span class="material-symbols-outlined text-[16px] text-primary">gavel</span><span class="font-label-sm text-label-sm">Honor Code Verified</span></div><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-low text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-[#059669]"></span><span class="font-label-sm text-label-sm">Server 18ms latency</span></div></div></div></footer></div><script src="../sign_in_registration/client-integration.js"></script>
+</body></html>

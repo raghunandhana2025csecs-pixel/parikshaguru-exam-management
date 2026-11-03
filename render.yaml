@@ -1,22 +1,23 @@
 # Render Blueprint Configuration (render.yaml)
-# ParikshaGuru - Spring Boot Backend & Express Frontend
+# ParikshaGuru - Spring Boot Backend (Docker) & Express Frontend
 # Database: External Aiven MySQL (configured via environment variables)
 
 services:
-  # Spring Boot REST API Backend
+  # Spring Boot REST API Backend (Docker)
   - type: web
     name: parikshaguru-backend
-    env: java
-    region: oregon # Or your preferred Render region
-    plan: free # or starter/standard
+    env: docker
+    region: oregon
+    plan: free
     rootDir: parikshaguru-backend/parikshaguru-backend
-    buildCommand: mvn clean package -DskipTests
-    startCommand: java -jar target/parikshaguru-backend-1.0.0.jar --spring.profiles.active=aiven
+    dockerfilePath: Dockerfile
     envVars:
       - key: SPRING_PROFILES_ACTIVE
         value: aiven
+      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+        value: update
       - key: DB_URL
-        sync: false # Set in Render dashboard
+        sync: false # Set in Render dashboard (e.g. jdbc:mysql://host:port/dbname?useSSL=true&requireSSL=true)
       - key: DB_USER
         sync: false # Set in Render dashboard
       - key: DB_PASSWORD

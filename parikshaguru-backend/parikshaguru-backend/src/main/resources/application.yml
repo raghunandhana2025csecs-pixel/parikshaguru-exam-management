@@ -2,7 +2,7 @@
 # Active profile can be set via: spring.profiles.active=aiven (defaults to local)
 
 server:
-  port: ${SERVER_PORT:8080}
+  port: ${PORT:${SERVER_PORT:8080}}
   servlet:
     context-path: ${SERVER_CONTEXT_PATH:/}
 

@@ -22,3 +22,5 @@ logging:
   level:
     root: ${LOG_LEVEL:INFO}
     com.parikshaguru: ${LOG_LEVEL:INFO}
+    org.springframework.boot.autoconfigure: DEBUG
+    org.springframework.jdbc.datasource: DEBUG

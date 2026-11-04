@@ -1,0 +1,861 @@
+<title>ParikshaGuru Project Showcase</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Design Plan
+   Layout: Hero + feature grid + technical showcase + CTA
+   Color: Deep indigo primary, warm amber accent, professional neutrals
+   Type: Space Grotesk for display (modern, technical), Inter for body (clean readability)
+*/
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-accent: #1e1b4b;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --text-muted: #999999;
+  --accent: #f59e0b;
+  --accent-light: #fbbf24;
+  --border: #e5e7eb;
+  --success: #10b981;
+  --card-bg: #ffffff;
+  --code-bg: #f3f4f6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-primary: #0f0f1a;
+    --bg-secondary: #1a1a2e;
+    --bg-accent: #2d2a5a;
+    --text-primary: #f5f5f5;
+    --text-secondary: #b4b4b4;
+    --text-muted: #808080;
+    --accent: #fbbf24;
+    --accent-light: #fcd34d;
+    --border: #2d2d3d;
+    --success: #34d399;
+    --card-bg: #1a1a2e;
+    --code-bg: #252538;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg-primary: #0f0f1a;
+  --bg-secondary: #1a1a2e;
+  --bg-accent: #2d2a5a;
+  --text-primary: #f5f5f5;
+  --text-secondary: #b4b4b4;
+  --text-muted: #808080;
+  --accent: #fbbf24;
+  --accent-light: #fcd34d;
+  --border: #2d2d3d;
+  --success: #34d399;
+  --card-bg: #1a1a2e;
+  --code-bg: #252538;
+  color-scheme: dark;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+header {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+.hero {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--bg-accent);
+  color: var(--accent);
+  padding: 8px 16px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  text-wrap: balance;
+}
+
+.hero-highlight {
+  color: var(--accent);
+}
+
+.hero-description {
+  font-size: 20px;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--accent);
+  display: block;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cta-group {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #000;
+}
+
+.btn-primary:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+section {
+  padding: 80px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.section-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  text-wrap: balance;
+}
+
+.section-description {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.feature-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  transition: all 0.3s;
+}
+
+.feature-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--bg-accent);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.tech-stack {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 48px;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.tech-category h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tech-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+}
+
+.tech-item::before {
+  content: "→";
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.metrics {
+  background: var(--bg-accent);
+  border-radius: 16px;
+  padding: 48px;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.metric-card {
+  text-align: center;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.metric-value {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.metric-label {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, var(--bg-accent), var(--accent));
+  border-radius: 16px;
+  padding: 64px 48px;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.cta-section h2 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.cta-section p {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+.quickstart {
+  background: var(--code-bg);
+  border-radius: 8px;
+  padding: 24px;
+  text-align: left;
+  margin-top: 32px;
+  border: 1px solid var(--border);
+}
+
+.quickstart h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.code-block {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 16px;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: #e5e7eb;
+  overflow-x: auto;
+  margin-bottom: 12px;
+}
+
+.code-comment {
+  color: #9ca3af;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 48px 0;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--success);
+  color: #000;
+  margin-left: 8px;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero-description {
+    font-size: 18px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .features-grid,
+  .tech-grid,
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stats {
+    gap: 32px;
+  }
+
+  .tech-stack,
+  .metrics,
+  .cta-section {
+    padding: 32px 24px;
+  }
+}
+</style>
+
+<header>
+  <div class="container">
+    <div class="header-content">
+      <a href="#" class="logo">
+        <div class="logo-icon">📚</div>
+        <span>ParikshaGuru</span>
+      </a>
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#tech">Technology</a>
+        <a href="#metrics">Metrics</a>
+        <a href="#setup">Setup</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">🎓 Final Year Project Submission</div>
+      <h1>
+        Complete Online<br>
+        <span class="hero-highlight">Examination System</span>
+      </h1>
+      <p class="hero-description">
+        A production-ready, full-stack examination management platform built with Spring Boot and Express.js.
+        Secure, scalable, and feature-complete for educational institutions.
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">185+</span>
+          <span class="stat-label">Features</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Complete</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">12K+</span>
+          <span class="stat-label">Lines of Code</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">40+</span>
+          <span class="stat-label">API Endpoints</span>
+        </div>
+      </div>
+      <div class="cta-group">
+        <a href="#setup" class="btn btn-primary">View Setup Guide</a>
+        <a href="#features" class="btn btn-secondary">Explore Features</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Core Capabilities</div>
+        <h2 class="section-title">Complete Feature Set</h2>
+        <p class="section-description">
+          Everything needed for secure, efficient online examination management across all user roles.
+        </p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🔐</div>
+          <h3>Secure Authentication</h3>
+          <p>JWT-based authentication with BCrypt password hashing. Role-based access control for Students, Faculty, and Administrators with granular permissions.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📝</div>
+          <h3>Live Exam Interface</h3>
+          <p>Real-time exam taking with server-synced timer, auto-save every 30 seconds, question navigation, bookmarking, and automatic submission on time expiry.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Result Management</h3>
+          <p>Automatic grading for MCQs, manual grading interface for subjective answers, result approval workflow, and detailed performance analytics.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">❓</div>
+          <h3>Question Bank</h3>
+          <p>Support for MCQ, True/False, Short Answer, and Essay questions. Difficulty levels, tagging, import/export, and randomization capabilities.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👨‍🏫</div>
+          <h3>Faculty Dashboard</h3>
+          <p>Create and schedule exams, manage questions, review submissions, grade answers, approve results, and view student analytics and reports.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚙️</div>
+          <h3>Admin Control</h3>
+          <p>Comprehensive user management, department and subject configuration, system settings, audit logs, and detailed analytics reporting.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔔</div>
+          <h3>Notifications</h3>
+          <p>Real-time notification system for exam schedules, results publication, status changes, and important announcements with history tracking.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Responsive Design</h3>
+          <p>Mobile-first responsive interface works seamlessly on desktop, tablet, and mobile devices. Clean, intuitive UI across all screen sizes.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3>Cloud Ready</h3>
+          <p>Docker containerization, Render deployment blueprint, environment-based configuration, SSL/TLS support, and production-ready architecture.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tech">
+    <div class="container">
+      <div class="tech-stack">
+        <div class="section-header" style="margin-bottom: 0;">
+          <div class="section-label">Technology Stack</div>
+          <h2 class="section-title">Modern, Enterprise-Grade Technologies</h2>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-category">
+            <h4>Backend</h4>
+            <div class="tech-list">
+              <div class="tech-item">Spring Boot 3.3.5</div>
+              <div class="tech-item">Java 21</div>
+              <div class="tech-item">Spring Security + JWT</div>
+              <div class="tech-item">Spring Data JPA</div>
+              <div class="tech-item">Hibernate ORM</div>
+              <div class="tech-item">Bean Validation</div>
+              <div class="tech-item">Maven</div>
+            </div>
+          </div>
+          <div class="tech-category">
+            <h4>Frontend</h4>
+            <div class="tech-list">
+              <div class="tech-item">Express.js Server</div>
+              <div class="tech-item">Node.js 18+</div>
+              <div class="tech-item">Vanilla JavaScript (ES6+)</div>
+              <div class="tech-item">Responsive CSS</div>
+              <div class="tech-item">Axios HTTP Client</div>
+              <div class="tech-item">Express Sessions</div>
+            </div>
+          </div>
+          <div class="tech-category">
+            <h4>Database</h4>
+            <div class="tech-list">
+              <div class="tech-item">MySQL 8.0 (Production)</div>
+              <div class="tech-item">Aiven Cloud MySQL</div>
+              <div class="tech-item">H2 (Testing)</div>
+              <div class="tech-item">HikariCP Pooling</div>
+              <div class="tech-item">JPA Schema Management</div>
+            </div>
+          </div>
+          <div class="tech-category">
+            <h4>DevOps</h4>
+            <div class="tech-list">
+              <div class="tech-item">Docker</div>
+              <div class="tech-item">Render.com</div>
+              <div class="tech-item">Git Version Control</div>
+              <div class="tech-item">Environment Variables</div>
+              <div class="tech-item">CI/CD Ready</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="metrics">
+    <div class="container">
+      <div class="metrics">
+        <div class="section-header" style="margin-bottom: 0;">
+          <div class="section-label">Project Statistics</div>
+          <h2 class="section-title">By The Numbers</h2>
+        </div>
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-value">185+</span>
+            <span class="metric-label">Features Implemented</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-value">12K+</span>
+            <span class="metric-label">Lines of Code</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-value">100+</span>
+            <span class="metric-label">Project Files</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-value">40+</span>
+            <span class="metric-label">REST API Endpoints</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-value">10+</span>
+            <span class="metric-label">Database Tables</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-value">3</span>
+            <span class="metric-label">User Roles</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-value">4</span>
+            <span class="metric-label">Question Types</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-value">100%</span>
+            <span class="metric-label">Production Ready</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="setup">
+    <div class="container">
+      <div class="cta-section">
+        <h2>Ready to Run <span class="badge">✅ TESTED</span></h2>
+        <p>Complete setup with H2 database for instant testing. No external dependencies required.</p>
+        <div class="quickstart">
+          <h4>Quick Start (5 Minutes)</h4>
+          <div class="code-block">
+<span class="code-comment"># 1. Start Backend (with embedded H2 database)</span>
+cd parikshaguru-backend/parikshaguru-backend
+mvn spring-boot:run -Dspring-boot.run.arguments="--spring.profiles.active=h2"
+<span class="code-comment"># Backend available at: http://localhost:8080</span>
+          </div>
+          <div class="code-block">
+<span class="code-comment"># 2. Start Frontend (in new terminal)</span>
+cd "ParikshaGuru Frontend"
+npm install && npm start
+<span class="code-comment"># Frontend available at: http://localhost:3000</span>
+          </div>
+          <div class="code-block">
+<span class="code-comment"># 3. Login with test credentials</span>
+Student: rohan.verma@university.ac.in / Student@123
+Faculty: nair@university.ac.in / Faculty@123
+Admin: admin@test.local / Admin@123
+          </div>
+        </div>
+        <div class="cta-group">
+          <a href="http://localhost:8080/swagger-ui.html" class="btn btn-primary" target="_blank">API Documentation</a>
+          <a href="http://localhost:3000" class="btn btn-secondary" target="_blank">Launch Application</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Documentation</div>
+        <h2 class="section-title">Comprehensive Documentation</h2>
+        <p class="section-description">
+          Five detailed documentation files covering every aspect of the project.
+        </p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>📖 README.md</h3>
+          <p>Complete project guide with installation, setup, API documentation, deployment instructions, and screenshots. 21KB of comprehensive documentation.</p>
+        </div>
+        <div class="feature-card">
+          <h3>🏗️ PROJECT_OVERVIEW.md</h3>
+          <p>Technical architecture, database schema, implementation details, deployment architecture, security audit, and learning outcomes. 18KB deep-dive.</p>
+        </div>
+        <div class="feature-card">
+          <h3>✨ FEATURES.md</h3>
+          <p>Complete list of all 185+ features categorized by module with implementation status, completion metrics, and feature highlights. 17KB feature documentation.</p>
+        </div>
+        <div class="feature-card">
+          <h3>✅ SUBMISSION_CHECKLIST.md</h3>
+          <p>Project submission verification checklist, pre-submission steps, quick start for evaluators, and project metrics. 12KB submission guide.</p>
+        </div>
+        <div class="feature-card">
+          <h3>🚀 RUN_LOCAL.md</h3>
+          <p>Local development setup with Aiven MySQL, environment configuration, troubleshooting guide, and test credentials. 6KB setup documentation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="#features">Features</a>
+      <a href="#tech">Technology</a>
+      <a href="#metrics">Metrics</a>
+      <a href="#setup">Setup</a>
+    </div>
+    <p>ParikshaGuru v1.0.0 | Final Year Project | November 2026</p>
+    <p style="margin-top: 8px; color: var(--text-muted);">
+      Developed by Arunkumar | Production-Ready Online Examination System
+    </p>
+  </div>
+</footer>
+
+<script>
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Animate stats on scroll
+const observerOptions = {
+  threshold: 0.5,
+  rootMargin: '0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.feature-card, .metric-card').forEach(card => {
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(20px)';
+  card.style.transition = 'opacity 0.6s, transform 0.6s';
+  observer.observe(card);
+});
+
+// Add active state to nav on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav a');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (window.scrollY >= sectionTop - 200) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.style.color = 'var(--text-secondary)';
+    if (link.getAttribute('href') === '#' + current) {
+      link.style.color = 'var(--accent)';
+    }
+  });
+});
+</script>

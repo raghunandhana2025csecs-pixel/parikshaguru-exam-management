@@ -1,27 +1,23 @@
-# Render Blueprint Configuration (render.yaml)
-# ParikshaGuru - Spring Boot Backend (Docker) & Express Frontend
-# Database: External Aiven MySQL (configured via environment variables)
-
 services:
-  # Spring Boot REST API Backend (Docker)
+  # Spring Boot REST API Backend
   - type: web
     name: parikshaguru-backend
-    env: docker
+    runtime: docker
     region: oregon
     plan: free
-    rootDir: parikshaguru-backend/parikshaguru-backend
-    dockerfilePath: Dockerfile
+    dockerfilePath: parikshaguru-backend/parikshaguru-backend/Dockerfile
+    dockerContext: parikshaguru-backend/parikshaguru-backend
     envVars:
       - key: SPRING_PROFILES_ACTIVE
         value: aiven
       - key: SPRING_JPA_HIBERNATE_DDL_AUTO
-        value: update
+        value: validate # Production safer than 'update'
       - key: DB_URL
-        sync: false # Set in Render dashboard (e.g. jdbc:mysql://host:port/dbname?useSSL=true&requireSSL=true)
+        sync: false
       - key: DB_USER
-        sync: false # Set in Render dashboard
+        sync: false
       - key: DB_PASSWORD
-        sync: false # Set in Render dashboard
+        sync: false
       - key: JWT_SECRET
         generateValue: true
       - key: SEED_ENABLED
@@ -29,19 +25,23 @@ services:
       - key: SEED_DEMO_DATA
         value: "false"
       - key: CORS_ORIGINS
-        sync: false # Set to frontend Render URL after frontend deployment
+        fromService:
+          type: web
+          name: parikshaguru-frontend
+          envVarKey: RENDER_EXTERNAL_URL
 
   # Express Static Frontend Portal
   - type: web
     name: parikshaguru-frontend
-    env: node
+    runtime: node
     region: oregon
     plan: free
     rootDir: ParikshaGuru Frontend
     buildCommand: npm install
     startCommand: npm start
     envVars:
-      - key: PORT
-        value: "3000"
       - key: API_BASE_URL
-        sync: false # Set to backend Render URL (e.g. https://parikshaguru-backend.onrender.com)
+        fromService:
+          type: web
+          name: parikshaguru-backend
+          envVarKey: RENDER_EXTERNAL_URL
